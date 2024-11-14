@@ -1,0 +1,17 @@
+SSL Installtion on Ubuntu
+Step 1
+Install Certbot and Nginx Plugin
+Next, install Certbot and the Nginx plugin that will automatically configure SSL certificates for you.
+Command: sudo apt install certbot python3-certbot-nginx
+
+
+Step 2: Adjust Firewall
+If you're using a firewall (like UFW), make sure to allow HTTP, HTTPS, and Nginx services:
+Command: sudo ufw allow 'Nginx Full'
+Check the status of your firewall: (if active)
+sudo ufw status
+
+
+Step 3: Obtain an SSL Certificate with Certbot
+Certbot can automatically obtain and configure an SSL certificate for your domain. You need to have your domain (e.g., example.com) pointing to your server's IP address before proceeding. You can obtain the SSL certificate with the following command:
+sudo certbot --nginx -d example.com -d www.example.com
